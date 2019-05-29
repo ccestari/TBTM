@@ -13,9 +13,7 @@ namespace TakeBackTheMusic.Models
     {
         public int ArtistID { get; set; }
 
-        //public int ArtistCreator { get; set; }
         public TakeBackTheMusicUser OwnerID { get; set; }
-        //public string OwnerID { get; set; }
 
         public DateTime ArtistCreateDate { get; set; }
 
