@@ -25,11 +25,11 @@ namespace TakeBackTheMusic.Models
         public string PhotoCaption { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Timestamp]
         public DateTime PhotoUploadTime { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Timestamp]
         public DateTime LastUpdated { get; set; }
 
         [ScaffoldColumn(false)]
@@ -47,11 +47,11 @@ namespace TakeBackTheMusic.Models
         public TakeBackTheMusicUser TaggedUser { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Timestamp]
         public DateTime TagAddedTime { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Timestamp]
         public DateTime TagLastUpdated { get; set; }
     }
 
@@ -85,11 +85,11 @@ namespace TakeBackTheMusic.Models
         public string PhotoComment { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Timestamp]
         public DateTime PhotoCommentCreateTime { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Timestamp]
         public DateTime LastUpdated { get; set; }
 
         [ScaffoldColumn(false)]
@@ -108,7 +108,7 @@ namespace TakeBackTheMusic.Models
         public TakeBackTheMusicUser PhotoFlaggerID { get; set; }
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Timestamp]
         public DateTime FlagDate { get; set; }
 
         [ScaffoldColumn(false)]
@@ -117,8 +117,9 @@ namespace TakeBackTheMusic.Models
         [ScaffoldColumn(false)]
         public bool EmployeeReviewed { get; set; }
 
-
         public PhotoFlagReason Reason { get; set; }
+
+        [Display(Name = "Other Reason for flagging")]
         public string ReasonOther { get; set; }
     }
 
