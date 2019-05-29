@@ -53,7 +53,7 @@ namespace TakeBackTheMusic.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PhotoID,PhotoFilePath,PhotoCaption,PhotoUploadTime,LastUpdated,IsDelete")] Photos photos)
+        public async Task<IActionResult> Create([Bind("PhotoID,PhotoFilePath,PhotoCaption")] Photos photos)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace TakeBackTheMusic.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("PhotoID,PhotoFilePath,PhotoCaption,PhotoUploadTime,LastUpdated,IsDelete")] Photos photos)
+        public async Task<IActionResult> Edit(Guid id, [Bind("PhotoID,PhotoFilePath,PhotoCaption")] Photos photos)
         {
             if (id != photos.PhotoID)
             {
