@@ -16,7 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using TakeBackTheMusic.Areas.Identity.Data;
 using TakeBackTheMusic.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace TakeBackTheMusic
 {
@@ -54,7 +55,8 @@ namespace TakeBackTheMusic
                     options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
                 });
 
-            
+            services.AddSingleton<IFileProvider>(
+                new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
             services.ConfigureApplicationCookie(options =>
             {
