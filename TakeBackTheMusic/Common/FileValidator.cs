@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace TakeBackTheMusic.Common
 {
-    public class FileValidator 
+   /* public class FileValidator 
     {
         protected void ExtValidate(this IFormFile userfile, string uploadtype)
         {
@@ -31,9 +31,9 @@ namespace TakeBackTheMusic.Common
 
 
         }
-    }
+    } */
 }
-
+/*
 
 public static class FormFileExtensions
 {
@@ -121,4 +121,4 @@ public static class FormFileExtensions
 
         return true;
     }
-}
+}  */

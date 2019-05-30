@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -47,6 +49,25 @@ namespace TakeBackTheMusic.Controllers
         {
             return View();
         }
+
+        // From https://www.c-sharpcorner.com/article/upload-download-files-in-asp-net-core-2-0/
+        // Currently error warning stating 'not all code paths return a value'
+        // POST: Photos/Upload
+        /* [HttpPost]
+           public async Task<IActionResult> UploadFile(IFormFile file)
+           {
+               if (file == null || file.Length == 0)
+               {
+                   return Content("No file selected");
+               }
+
+               var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", file.ToString());
+
+               using (var stream = new FileStream(path, FileMode.Create))
+               {
+                   await file.CopyToAsync(stream);
+               }
+           }  */
 
         // POST: Photos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
